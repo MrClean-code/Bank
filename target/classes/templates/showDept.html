@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>One dept</title>
+</head>
+<body>
+    <h4> Limit:
+        <span th:text="${dept.getLimit()}">VALUE</span>
+    </h4>
+
+    <h4> Percent:
+        <span th:text="${dept.getPercent()}">VALUE</span>
+    </h4>
+
+    <h4> Id:
+        <span th:text="${dept.getId()}">VALUE</span>
+    </h4>
+
+    <a th:href="@{/credit/{id}/editDept(id=${dept.getId()})}">edit</a>
+    <!--<a th:href="@{/credit/{id}/deleteDept(id=${dept.getId()})}">delete</a>-->
+    <form th:method="DELETE" th:action="@{/credit/{id}(id=${dept.getId()})}">
+        <input type="submit" value="delete"/>
+    </form>
+</body>
+</html>

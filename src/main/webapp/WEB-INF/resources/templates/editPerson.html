@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit person</title>
+</head>
+<body>
+
+
+<form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
+    <tr>
+        <Td><Label for="name"> Name and surname: </label></Td>
+        <Td><input type="text" th:field="*{name}" id="name" class=textfield/></Td>
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">error</div>
+    </tr>
+
+    <br>
+
+    <tr>
+        <Td><Label for="number"> Number: </label></Td>
+        <Td><Input type="text" id="number" th:field="*{number}" class=textfield/></Td>
+        <div  th:if="${#fields.hasErrors('number')}" th:errors="*{number}">error</div>
+    </tr>
+
+    <br>
+
+    <tr>
+        <Td><Label for="mail"> Mail: </label></Td>
+        <Td><Input type="text" id="mail" th:field="*{mail}" class=textfield/></Td>
+        <div th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}">user</div>
+    </tr>
+
+    <br>
+
+    <tr>
+        <Td><Label for="passport"> Number passport: </label></Td>
+        <Td><Input type="text" id="passport" th:field="*{passport}" class=textfield/></Td>
+        <div th:if="${#fields.hasErrors('passport')}" th:errors="*{passport}">user</div>
+    </tr>
+
+
+    <tr>
+        <Td align="bottom">
+            <input align="bottom" type="submit" value="edit">
+        </Td>
+    </tr>
+</form>
+</body>
+</html>

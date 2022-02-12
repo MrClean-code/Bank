@@ -1,0 +1,63 @@
+-- Создание таблицы offer
+create table Offer(
+                      id int NOT NULL IDENTITY,
+                      client varchar(50),
+                      years int,
+                      amount_payment double,
+                      percent double,
+                      month_pay double,
+                      PRIMARY KEY (id)
+);
+
+-- Вставить значения из полей
+INSERT INTO OFFER (client, years, amount_payment, percent, month_pay) VALUES (?, ?, ?, ?, ?);
+
+-- Отобразить таблицу
+SELECT * FROM OFFER;
+
+-- Создание таблицы dept
+create table Dept(
+	id INT NOT NULL  IDENTITY,
+	limit INT,
+	PERCENT INT	
+);
+
+-- Вставить значения из полей
+INSERT INTO DEPT (LIMIT, PERCENT) VALUES (?, ?);
+
+-- Отобразить таблицу dept
+SELECT * FROM DEPT;
+
+-- Отобразить каждого по id
+SELECT * FROM DEPT WHERE id=?;
+
+-- Обновить значения у полей по id
+UPDATE DEPT SET LIMIT=?, PERCENT=? WHERE id=?
+
+-- Удалить объект по id
+DELETE FROM DEPT WHERE id=?
+
+-- Создание таблицы Person
+create table Person(
+                      id int NOT NULL IDENTITY,
+                      name varchar(50),
+                      number bigint,
+                      mail varchar(50),
+                      passport varchar(50),
+                      PRIMARY KEY (id)
+);
+
+-- Вставить значения из полей
+INSERT INTO PERSON (name, number, mail, passport) VALUES  (?, ?, ?, ?);
+
+-- Отобразить таблицу Person
+SELECT * FROM PERSON;
+
+-- Отобразить каждого по id
+SELECT * FROM PERSON WHERE id=?;
+
+-- Обновить значения у полей по id
+UPDATE PERSON SET NAME=?, NUMBER=?, MAIL=?, PASSPORT=? WHERE id=?
+
+-- Удалить объект по id
+DELETE FROM Person WHERE id=?

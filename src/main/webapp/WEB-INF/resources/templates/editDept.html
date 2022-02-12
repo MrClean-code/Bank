@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/credit/{id}(id=${dept.getId()})}" th:object="${dept}">
+    <tr>
+        <Td><Label for="limit"> Limit for credit: </label></Td>
+        <Td><input type="text" th:field="*{limit}" id="limit" class=textfield/></Td>
+        <div  th:if="${#fields.hasErrors('limit')}" th:errors="*{limit}">error</div>
+    </tr>
+
+    <tr>
+        <Td><Label for="percent"> Precent rate:  </label></Td>
+        <Td><Input type="text" id="percent" th:field="*{percent}" class=textfield/></Td>
+        <div th:if="${#fields.hasErrors('percent')}" th:errors="*{percent}">error</div>
+    </tr>
+
+    <tr>
+        <Td align="bottom">
+            <input align="bottom" type="submit" value="edit">
+        </Td>
+    </tr>
+</form>
+</body>
+</html>
