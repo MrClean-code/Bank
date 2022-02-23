@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="TestBank" />
         <module name="TestBankH" />
+        <module name="HBamk" />
       </profile>
     </annotationProcessing>
   </component>

@@ -492,38 +492,38 @@
 <div class="section">
     <div class="wrapper">
         <table width=70% border=0 cellpadding=4 cellspacing=0 align=center class="table1">
-            <h2><p class=caption>Credit offer</p>  </h2>
+            <h2><p class=caption>Credit offer</p></h2>
             <form th:method="POST" th:action="@{/order}" th:object="${offer}">
 
                 <tr>
-                    <Td><Label for="client">Client: </label></Td>
-                    <Td><Input placeholder="Name and surname" required type="text" th:field="*{client}" id="client" maxlength=25 class=textfield></Td>
-                    <div th:if="${#fields.hasErrors('client')}" th:errors="*{client}">error</div>
+                    <td><label for="client">Client: </label></td>
+                    <td><input placeholder="Name and surname" type="text" th:field="*{client}" id="client" maxlength=25 class=textfield></td>
+                    <td><div th:if="${#fields.hasErrors('client')}" th:errors="*{client}">error</div></td>
                 </tr>
 
 
                 <tr>
-                    <Td><Label for="creditsYear">Credit years: </label></Td>
-                    <Td><Input  placeholder="Only 1, 2, 3, 4, 5 years" required type="text" id="creditsYear"  th:field="*{creditsYear}" maxlength=25 class=textfield></Td>
-                    <div th:if="${#fields.hasErrors('creditsYear')}" th:errors="*{creditsYear}">error</div>
+                    <td><label for="creditsYear">Credit years: </label></td>
+                    <td><input placeholder="Only 1, 2, 3, 4, 5 years"  type="text" id="creditsYear"  th:field="*{creditsYear}" maxlength=25 class=textfield></td>
+                    <td><div th:if="${#fields.hasErrors('creditsYear')}" th:errors="*{creditsYear}">error</div></td>
                 </tr>
 
                 <tr>
-                    <Td><Label for="payment">Amount payment: </label></Td>
-                    <Td><Input required type="text" id="payment" th:field="*{payment}" maxlength=25 class=textfield></Td>
-                    <div th:if="${#fields.hasErrors('payment')}" th:errors="*{payment}">error</div>
+                    <td><label for="payment">Amount payment: </label></td>
+                    <td><input type="text" id="payment" th:field="*{payment}" maxlength=25 class=textfield></td>
+                    <td><div th:if="${#fields.hasErrors('payment')}" th:errors="*{payment}">error</div></td>
                 </tr>
 
                 <tr>
-                    <Td><Label for="percents">Percent: </label></Td>
-                    <Td><Input required type="text" id="percents" th:field="*{percents}" maxlength=25 class=textfield></Td>
-                    <div th:if="${#fields.hasErrors('percents')}" th:errors="*{percents}">error</div>
+                    <td><label for="percents">Percent: </label></td>
+                    <td><input type="text" id="percents" th:field="*{percents}" maxlength=25 class=textfield></td>
+                    <td><div th:if="${#fields.hasErrors('percents')}" th:errors="*{percents}">error</div></td>
                 </tr>
 
                 <tr>
-                    <Td align="bottom">
-                        <Input align="bottom" type="submit" value="complete">
-                    </Td>
+                    <td align="bottom">
+                        <input align="bottom" type="submit" value="complete">
+                    </td>
                 </tr>
             </form>
         </table>

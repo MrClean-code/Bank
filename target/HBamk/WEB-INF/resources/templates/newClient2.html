@@ -483,27 +483,27 @@
             <form th:method="POST" th:action="@{/people}" th:object="${person}">
                 <tr>
                     <Td><Label for="name"> Name and surname: </label></Td>
-                    <Td><input required type="text" id="name" th:field="*{name}" class=textfield/></Td>
-                    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">error</div>
+                    <Td><input  type="text" id="name" th:field="*{name}" class=textfield/></Td>
+                    <td><div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">error</div></td>
                 </tr>
 
                 <tr>
                     <Td><Label for="number"> Number: </label></Td>
-                    <Td><Input required type="text" id="number" th:field="*{number}" class=textfield/></Td>
-                    <div th:if="${#fields.hasErrors('number')}" th:errors="*{number}">error</div>
+                    <Td><Input  type="text" id="number" th:field="*{number}" class=textfield/></Td>
+                    <td><div th:if="${#fields.hasErrors('number')}" th:errors="*{number}">error</div></td>
                 </tr>
 
 
                 <tr>
                     <Td><Label for="mail"> Mail: </label></Td>
-                    <Td><Input required type="text" id="mail" th:field="*{mail}" class=textfield/></Td>
-                    <div th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}">error</div>
+                    <Td><Input type="text" id="mail" th:field="*{mail}" class=textfield/></Td>
+                    <td><div th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}">error</div></td>
                 </tr>
 
                 <tr>
                     <Td><Label for="passport"> Number passport: </label></Td>
-                    <Td><Input required type="text" id="passport" th:field="*{passport}" class=textfield/></Td>
-                    <div th:if="${#fields.hasErrors('passport')}" th:errors="*{passport}">error</div>
+                    <Td><Input type="text" id="passport" th:field="*{passport}" class=textfield/></Td>
+                    <td><div th:if="${#fields.hasErrors('passport')}" th:errors="*{passport}">error</div></td>
                 </tr>
 
 

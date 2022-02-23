@@ -53,7 +53,7 @@ public class PeopleController {
     @PostMapping()
     public String create(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "people/new";
+            return "newClient2";
         }
         personDAO.save(person);
         return "redirect:/people";

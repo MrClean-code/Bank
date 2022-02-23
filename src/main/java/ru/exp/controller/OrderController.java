@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.exp.dao.OfferDAO;
 import ru.exp.model.Offer;
-import ru.exp.model.Person;
+
 
 import javax.validation.Valid;
 
@@ -48,7 +48,7 @@ public class OrderController {
     @PostMapping()
     public String create(@ModelAttribute("offer")  @Valid Offer offer, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "order/new";
+            return "creditOffer6";
         }
         offerDAO.save(offer);
         return "redirect:/order/date";

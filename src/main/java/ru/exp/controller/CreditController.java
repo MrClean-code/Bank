@@ -47,7 +47,7 @@ public class CreditController {
     @PostMapping()
     public String create(@ModelAttribute("dept") @Valid Dept dept, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "credit/new";
+            return "newCredit5";
         }
         deptDAO.save(dept);
         return "redirect:/credit";

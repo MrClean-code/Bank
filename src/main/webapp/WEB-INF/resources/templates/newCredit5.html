@@ -486,14 +486,14 @@
             <FORM th:method="POST" th:action="@{/credit}" th:object="${dept}">
                 <tr>
                     <Td><Label for="limit"> Limit for credit: </label></Td>
-                    <Td><input required type="text" th:field="*{limit}" id="limit" class=textfield/></Td>
-                    <div th:if="${#fields.hasErrors('limit')}" th:errors="*{limit}">error</div>
+                    <Td><input type="text" th:field="*{limit}" id="limit" class=textfield/></Td>
+                    <td><div th:if="${#fields.hasErrors('limit')}" th:errors="*{limit}">error</div></td>
                 </tr>
 
                 <tr>
                     <Td><Label for="percent"> Precent rate: </label></Td>
                     <Td><Input required type="text" id="percent" th:field="*{percent}" class=textfield/></Td>
-                    <div th:if="${#fields.hasErrors('percent')}" th:errors="*{percent}">error</div>
+                    <td><div th:if="${#fields.hasErrors('percent')}" th:errors="*{percent}">error</div></td>
                 </tr>
 
                 <tr>
