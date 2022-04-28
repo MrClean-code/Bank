@@ -12,15 +12,6 @@ public class Dept {
     @Min(2)
     private int percent;
 
-    public Dept() {
-    }
-
-    public Dept(int id, int limit, int percent) {
-        this.id = id;
-        this.limit = limit;
-        this.percent = percent;
-    }
-
     public int getId() {
         return id;
     }

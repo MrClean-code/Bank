@@ -1,12 +1,12 @@
 package ru.exp.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.exp.dao.PersonDAO;
+import ru.exp.exception.dao.PersonDAOException;
 import ru.exp.model.Person;
 
 import javax.validation.Valid;
@@ -37,7 +37,7 @@ public class PeopleController {
 
     // one person
     @GetMapping("/{id}")
-    public String show(@PathVariable("id") int id, Model model) {
+    public String show(@PathVariable("id") int id, Model model) throws PersonDAOException {
         model.addAttribute("person", personDAO.show(id));
         return "showPerson";
     }
@@ -60,7 +60,7 @@ public class PeopleController {
     }
 
     @GetMapping("/{id}/editPerson")
-    public String edit(Model model, @PathVariable("id") int id) {
+    public String edit(Model model, @PathVariable("id") int id) throws PersonDAOException {
         model.addAttribute("person", personDAO.show(id));
         return "editPerson";
     }
@@ -69,17 +69,11 @@ public class PeopleController {
     public String update(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult,
                          @PathVariable("id") int id) {
         if (bindingResult.hasErrors()) {
-            return "people/{id}/editPerson";
+            return "editPerson";
         }
         personDAO.update(id, person);
         return "redirect:/people";
     }
-
-//    @GetMapping("/{id}/deletePerson")
-//    public String delete(Model model, @PathVariable("id") int id){
-//        model.addAttribute("person", personDAO.show(id));
-//        return "deletePerson";
-//    }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {

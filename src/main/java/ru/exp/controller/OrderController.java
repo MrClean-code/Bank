@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.exp.dao.OfferDAO;
+import ru.exp.exception.dao.OfferDAOException;
 import ru.exp.model.Offer;
 
 
@@ -31,12 +32,6 @@ public class OrderController {
         return "listOrder6";
     }
 
-    @GetMapping("/date")
-    public String show(Model model) {
-        model.addAttribute("order", offerDAO.indexDB());
-        return "redirect:/order";
-    }
-
     //new offer
     @GetMapping("/new")
     public String newOffer(Model model) {
@@ -46,12 +41,11 @@ public class OrderController {
 
     // add in DB
     @PostMapping()
-    public String create(@ModelAttribute("offer")  @Valid Offer offer, BindingResult bindingResult) {
+    public String create(@ModelAttribute("offer")  @Valid Offer offer, BindingResult bindingResult) throws OfferDAOException {
         if (bindingResult.hasErrors()) {
             return "creditOffer6";
         }
         offerDAO.save(offer);
-        return "redirect:/order/date";
+        return "redirect:/order";
     }
-
 }

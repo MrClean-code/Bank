@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/normalize.css}">
     <link rel="stylesheet" th:href="@{/css/page_5.css}">
+    <link rel="stylesheet" th:href="@{/css/normalize.css}">
     <style>
         body {
             background-color: #eaeaea;
             font-family: 'Montserrat', sans-serif;
         }
-        .header{
+
+        .header {
             height: 110px;
         }
+
         .wrapper {
             padding-left: 15px;
             padding-right: 15px;
@@ -22,34 +24,38 @@
             margin: 0 auto;
             position: relative;
         }
-        .navigation{
+
+        .navigation {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding-top: 36px;
             padding-bottom: 40px;
         }
-        .logo{
+
+        .logo {
             width: 140px;
             height: 80px;
             padding-top: 0px;
             padding-bottom: 0px;
         }
+
         .nav {
             display: flex;
             list-style-type: none;
-            font-weight: 700px;
+            font-weight: 600;
             text-transform: uppercase;
             padding-left: 0px;
             margin-bottom: 0px;
             margin-top: 0px;
         }
 
-        .nav>li{
+        .nav>li {
             padding-left: 20px;
             margin-left: 20px;
             position: relative;
         }
+
         .nav>li::before {
             content: '';
             display: block;
@@ -59,63 +65,69 @@
             background-color: black;
             left: 0px;
         }
-        .nav>li:first-child{
+
+        .nav>li:first-child {
             padding-left: 0px;
             margin-left: 0px;
         }
-        .nav>li:first-child::before{
+
+        .nav>li:first-child::before {
             display: none;
         }
-        .nav>li>a{
+
+        .nav>li>a {
             text-decoration: none;
             font-size:17px;
             color: black;
         }
-        .nav>li>a:hover{
+
+        .nav>li>a:hover {
             cursor: pointer;
             color: #e1df31;
         }
 
-        .section{
+        .section {
             background-color:#5678db;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
             color: #fff;
-            padding-top: 250px;
-            padding-bottom: 395px;
+            padding-top: 350px;
+            padding-bottom: 255px;
         }
+
         .caption {
             margin: 0px 15%;
             padding-bottom: 4px;
             color: black;
-
         }
+
         .textarea {
             background: white;
             padding: 5px;
             border: 1px solid black;
             width: 50%;
         }
-        .radiobutton{
+
+        .radiobutton {
             background: green;
             color: red;
             border: 1px solid black;
             margin: 2px;
-
         }
-        .col{
+
+        .col {
             background: green;
             color: red;
             border: 1px solid black;
             margin-right: 7px;
         }
+
         footer {
             position: relative;
             margin: 0 auto;
             text-align: center;
         }
-
     </style>
     <style>
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -474,7 +486,7 @@
 <div class="header">
     <div class="wrapper">
         <div class="navigation">
-            <img class="logo" src="src/image/logoBank3.png" alt="Logo" usemap="#carta_img">
+            <img class="logo" th:src="@{/image/logoBank3.png}" alt="Logo" usemap="#carta_img">
             <ul class="nav">
                 <li><a href="/people/new">New Client</a></li>
                 <li><a href="/people">Bank Client</a></li>
@@ -492,38 +504,38 @@
 <div class="section">
     <div class="wrapper">
         <table width=70% border=0 cellpadding=4 cellspacing=0 align=center class="table1">
-            <h2><p class=caption>Credit offer</p>  </h2>
+            <h2><p class=caption>Credit offer</p></h2>
             <form th:method="POST" th:action="@{/order}" th:object="${offer}">
 
                 <tr>
-                    <Td><Label for="client">Client: </label></Td>
-                    <Td><Input placeholder="Name and surname" required type="text" th:field="*{client}" id="client" maxlength=25 class=textfield></Td>
-                    <div th:if="${#fields.hasErrors('client')}" th:errors="*{client}">error</div>
+                    <td><label for="client">Client: </label></td>
+                    <td><input placeholder="Name and surname" type="text" th:field="*{client}" id="client" maxlength=25 class=textfield></td>
+                    <td><div th:if="${#fields.hasErrors('client')}" th:errors="*{client}">error</div></td>
                 </tr>
 
 
                 <tr>
-                    <Td><Label for="creditsYear">Credit years: </label></Td>
-                    <Td><Input  placeholder="Only 1, 2, 3, 4, 5 years" required type="text" id="creditsYear"  th:field="*{creditsYear}" maxlength=25 class=textfield></Td>
-                    <div th:if="${#fields.hasErrors('creditsYear')}" th:errors="*{creditsYear}">error</div>
+                    <td><label for="creditsYear">Credit years: </label></td>
+                    <td><input placeholder="Only 1, 2, 3, 4, 5 years"  type="text" id="creditsYear"  th:field="*{creditsYear}" maxlength=25 class=textfield></td>
+                    <td><div th:if="${#fields.hasErrors('creditsYear')}" th:errors="*{creditsYear}">error</div></td>
                 </tr>
 
                 <tr>
-                    <Td><Label for="payment">Amount payment: </label></Td>
-                    <Td><Input required type="text" id="payment" th:field="*{payment}" maxlength=25 class=textfield></Td>
-                    <div th:if="${#fields.hasErrors('payment')}" th:errors="*{payment}">error</div>
+                    <td><label for="payment">Amount payment: </label></td>
+                    <td><input type="text" id="payment" th:field="*{payment}" maxlength=25 class=textfield></td>
+                    <td><div th:if="${#fields.hasErrors('payment')}" th:errors="*{payment}">error</div></td>
                 </tr>
 
                 <tr>
-                    <Td><Label for="percents">Percent: </label></Td>
-                    <Td><Input required type="text" id="percents" th:field="*{percents}" maxlength=25 class=textfield></Td>
-                    <div th:if="${#fields.hasErrors('percents')}" th:errors="*{percents}">error</div>
+                    <td><label for="percents">Percent: </label></td>
+                    <td><input type="text" id="percents" th:field="*{percents}" maxlength=25 class=textfield></td>
+                    <td><div th:if="${#fields.hasErrors('percents')}" th:errors="*{percents}">error</div></td>
                 </tr>
 
                 <tr>
-                    <Td align="bottom">
-                        <Input align="bottom" type="submit" value="complete">
-                    </Td>
+                    <td align="bottom">
+                        <input align="bottom" type="submit" value="complete">
+                    </td>
                 </tr>
             </form>
         </table>

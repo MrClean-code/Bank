@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: ru.exp.dao.DeptDAOTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 11.42 s <<< FAILURE! - in ru.exp.dao.DeptDAOTest
+delete  Time elapsed: 0.031 s  <<< ERROR!
+java.lang.NullPointerException
+	at ru.exp.dao.DeptDAOTest.delete(DeptDAOTest.java:116)
+
+update  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NullPointerException
+	at ru.exp.dao.DeptDAOTest.update(DeptDAOTest.java:99)
+
+save  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at ru.exp.dao.DeptDAOTest.save(DeptDAOTest.java:82)
+
+show  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at ru.exp.dao.DeptDAOTest.show(DeptDAOTest.java:54)
+
+index  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at ru.exp.dao.DeptDAOTest.index(DeptDAOTest.java:28)
+

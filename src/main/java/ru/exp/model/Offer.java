@@ -26,20 +26,8 @@ public class Offer {
     private double payment;
 
     private double everyMonth;
-    private List<Date> datePay;
-
-    public Offer() {
-    }
-
-    public Offer(int id, String client, int creditsYear, double percents, double payment, double everyMonth, List<Date> datePay) {
-        this.id = id;
-        this.client = client;
-        this.creditsYear = creditsYear;
-        this.percents = percents;
-        this.payment = payment;
-        this.everyMonth = everyMonth;
-        this.datePay = datePay;
-    }
+    private String[] dateMas;
+    private Array masStr;
 
     public int getId() {
         return id;
@@ -89,11 +77,19 @@ public class Offer {
         this.everyMonth = everyMonth;
     }
 
-    public List<Date> getDatePay() {
-        return datePay;
+    public String[] getDateMas() {
+        return dateMas;
     }
 
-    public void setDatePay(List<Date> datePay) {
-        this.datePay = datePay;
+    public void setDateMas(String[] dateMas) {
+        this.dateMas = dateMas;
+    }
+
+    public Array getMasStr() {
+        return masStr;
+    }
+
+    public void setMasStr(Array masStr) {
+        this.masStr = masStr;
     }
 }

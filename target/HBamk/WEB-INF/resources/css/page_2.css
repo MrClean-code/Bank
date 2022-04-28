@@ -1,0 +1,106 @@
+body {
+	background-color: #eaeaea;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+	height: 110px;
+}
+
+.wrapper {
+	padding-left: 15px;
+	padding-right: 15px;
+	max-width: 1170px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.navigation {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 36px;
+	padding-bottom: 40px;
+}
+
+.logo {
+	width: 140px;
+	height: 80px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.nav {
+	display: flex;
+	list-style-type: none;
+	font-weight: 600;
+	text-transform: uppercase;
+	padding-left: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.nav>li {
+	padding-left: 20px;
+	margin-left: 20px;
+	position: relative; 
+}
+
+.nav>li::before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 2px;
+	height: 100%;
+	background-color: black;
+	left: 0px;
+}
+
+.nav>li:first-child {
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+.nav>li:first-child::before {
+	display: none;	
+}
+
+.nav>li>a {
+	text-decoration: none;
+	font-size:17px;
+	color: black;
+}
+
+.nav>li>a:hover {
+	cursor: pointer;
+	color: #e1df31; 
+}
+
+.section {
+	background-color:#5678db;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: #fafafa;
+	padding-top: 385px;
+	padding-bottom: 300px;
+}
+
+.caption {
+	margin: 0px 15%;
+	padding-bottom: 4px;
+	color: black;
+}
+
+.textarea {
+	background: white;
+	padding: 5px;
+	border: 1px solid black;
+	width: 50%;
+}
+
+footer {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+}

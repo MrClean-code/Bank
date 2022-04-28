@@ -6,11 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.exp.dao.DeptDAO;
+import ru.exp.exception.dao.DeptDAOException;
 import ru.exp.model.Dept;
-import ru.exp.model.Person;
 
 import javax.validation.Valid;
-
 
 @Controller
 @RequestMapping("/credit")
@@ -31,7 +30,7 @@ public class CreditController {
 
     // one person
     @GetMapping("/{id}")
-    public String show(@PathVariable("id") int id, Model model) {
+    public String show(@PathVariable("id") int id, Model model) throws DeptDAOException {
         model.addAttribute("dept", deptDAO.show(id));
         return "showDept";
     }
@@ -54,7 +53,7 @@ public class CreditController {
     }
 
     @GetMapping("/{id}/editDept")
-    public String edit(Model model, @PathVariable("id") int id) {
+    public String edit(Model model, @PathVariable("id") int id) throws DeptDAOException {
         model.addAttribute("dept", deptDAO.show(id));
         return "editDept";
     }
@@ -63,7 +62,7 @@ public class CreditController {
     public String update(@ModelAttribute("dept") @Valid Dept dept, BindingResult bindingResult,
                          @PathVariable("id") int id) {
         if (bindingResult.hasErrors()) {
-            return "credit/{id}/editDept";
+            return "editDept";
         }
         deptDAO.update(id, dept);
         return "redirect:/credit";

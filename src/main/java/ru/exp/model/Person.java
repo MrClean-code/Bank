@@ -21,17 +21,6 @@ public class Person {
     @NotBlank(message = "passport need valid")
     private String passport;
 
-    public Person() {
-    }
-
-    public Person(int id, String name, long number, String mail, String passport) {
-        this.id = id;
-        this.name = name;
-        this.number = number;
-        this.mail = mail;
-        this.passport = passport;
-    }
-
     public int getId() {
         return id;
     }
